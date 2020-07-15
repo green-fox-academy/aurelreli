@@ -1,0 +1,39 @@
+body{
+    font-family:arial;
+  }
+  h1{
+    background:grey;
+    border: 1px solid black;
+    padding: 15px;
+  }
+  
+  div.post{
+    border:1px solid black;
+    margin-right:20%;
+    margin-bottom:10px;
+  }
+  h1{
+    padding-left:10%;
+  }
+  header{
+    margin-bottom:10px;
+  }
+  section.content, section.newcontent{
+    margin-left:10%;
+  }
+  h4{
+    margin:10px 10px 10px 10px;
+    font-size:30px;
+  }
+  p.postcontent{
+    margin-left:15px;
+    font-size:20px;
+  }
+  button{
+    margin-top:15px;
+  }
+  h3{
+    margin-top:40px;
+    margin-bottom:10px;
+  }
+  

@@ -1,0 +1,54 @@
+div.elso, div.masodik{
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 60px 45% 0px 29%;
+  line-height:25px;
+}
+blockquote{
+  background:grey;
+  color:white;
+  margin:60px 34% 30px 28%; 
+  padding:40px;
+  font-size:70px;
+}
+h1, blockquote{
+  font-family: 'Abril Fatface', cursive;
+}
+section{
+  font-family: 'Merriweather', serif;
+  font-style:italic;
+  font-weight:bold;
+  font-size:15px;
+  
+  
+}
+.picture{
+  position: relative;
+  text-align: left;
+  border-top:10px solid black;
+  margin: 0px 10% 10px 10%;
+}
+.picture h1{
+  position: absolute;
+  top: 65%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-size:120px;
+}
+.kicsi{
+  font-size: 60px;
+  font-family: 'Abril Fatface', cursive;
+}
+div.vonal{
+  border: 1px solid black;
+  margin:50px 36% 50px 28%;
+}
+h2{
+  font-size:30px;
+  margin:60px 0px 60px 0px;
+  
+  
+}
+h3{
+  margin-top:30px;
+  margin-bottom:0px;
+}
