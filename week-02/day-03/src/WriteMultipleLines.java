@@ -6,7 +6,7 @@ import java.util.List;
 
 public class WriteMultipleLines {
   public static void main(String[] args) {
-    writer("my-file.txt", "apple", 4);
+    writer("my-file.txt", "pear", 7);
   }
   public static void writer(String path, String word, int number) {
     try {
