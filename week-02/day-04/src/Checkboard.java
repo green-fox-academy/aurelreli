@@ -2,33 +2,32 @@ import javax.swing.*;
 
 import java.awt.*;
 
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PositionSquare {
+public class Checkboard {
 
-  public static void mainDraw(Graphics graphics){
-    // create a function that draws one square and takes 3 parameters:
-    // the x and y coordinates of the square's top left corner and the graphics
-    // and draws a 50x50 square from that point.
-    // draw 3 squares with that function.
-    // avoid code duplication.
-    int number = 3;
-    for (int i = 0; i < number; i++) {
-      drawSquares(10*i,10*i,graphics);
+  public static void mainDraw(Graphics graphics) {
+    // Fill the canvas with a checkerboard pattern.
 
+    int checkSize = 400;
+    for (int i = 0; i < HEIGHT; i++ ) {
+      for (int j = 0; j < WIDTH; j++ ) {
+        if (((i % 2) == 0) && ((j % 2) == 0)) {
+          graphics.setColor(Color.BLACK);
+        } else {
+          graphics.setColor(Color.WHITE);
+        }
+        graphics.fillRect(i, j, checkSize/2, checkSize/2);
+      }
     }
 
 
   }
-  public static void drawSquares(int startX, int startY, Graphics g) {
-    int baseSize = 50;
-    g.drawRect(startX, startY, baseSize, baseSize);
-
-
-    }
 
 
   // Don't touch the code below
+
   static int WIDTH = 320;
   static int HEIGHT = 320;
 
@@ -50,5 +49,4 @@ public class PositionSquare {
       mainDraw(graphics);
     }
   }
-
 }

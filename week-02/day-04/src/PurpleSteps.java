@@ -4,29 +4,27 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PositionSquare {
-
-  public static void mainDraw(Graphics graphics){
-    // create a function that draws one square and takes 3 parameters:
-    // the x and y coordinates of the square's top left corner and the graphics
-    // and draws a 50x50 square from that point.
-    // draw 3 squares with that function.
-    // avoid code duplication.
-    int number = 3;
-    for (int i = 0; i < number; i++) {
-      drawSquares(10*i,10*i,graphics);
+public class PurpleSteps {
+  public static void mainDraw(Graphics graphics) {
+    // Reproduce this:
+    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
+    int baseSize = 20;
+    int space = 20;
+    int times = 13;
+    int padding = 2;
+    for (int i = 0; i < times; i++) {
+      int xy = (space * i) + space;
+      graphics.setColor(Color.black);
+      graphics.fillRect(xy, xy, baseSize+padding, baseSize+padding);
+    }
+    for (int i = 0; i < times; i++) {
+      int xy = (space * i) + space;
+      graphics.setColor(Color.PINK);
+      graphics.fillRect(xy+padding, xy+padding, baseSize-padding, baseSize-padding);
 
     }
-
 
   }
-  public static void drawSquares(int startX, int startY, Graphics g) {
-    int baseSize = 50;
-    g.drawRect(startX, startY, baseSize, baseSize);
-
-
-    }
-
 
   // Don't touch the code below
   static int WIDTH = 320;
@@ -50,5 +48,4 @@ public class PositionSquare {
       mainDraw(graphics);
     }
   }
-
 }

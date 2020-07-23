@@ -1,4 +1,3 @@
-import java.util.Random;
 import javax.swing.*;
 
 import java.awt.*;
@@ -6,27 +5,27 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangles {
-
+public class PurpleSteps3D {
   public static void mainDraw(Graphics graphics) {
-    // draw four different size and color rectangles.
-    // avoid code duplication.
-    int baseSize = 10;
-    int space = 20;
-    int times = 4;
+    // Reproduce this:
+    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
+    int baseSize = 20;
+    int space = 9;
+    int times = 13;
+    int padding = 2;
+    int rate = 1;
     for (int i = 0; i < times; i++) {
-      graphics.setColor(getRandomColor());
-      graphics.drawRect(space * i, space * i, baseSize * i, baseSize * i);
-
+      int xy = ((space * i) + space) * i * rate;
+      graphics.setColor(Color.black);
+      graphics.fillRect(xy, xy, (baseSize*i*rate) + padding, (baseSize*i*rate) + padding);
+    }
+    for (int i = 0; i < times; i++) {
+      int xy = ((space * i) + space) * i * rate;
+      graphics.setColor(Color.PINK);
+      graphics.fillRect(xy + padding, xy + padding, (baseSize*i*rate) - padding, (baseSize*i*rate) - padding);
 
     }
 
-  }
-
-  public static Color getRandomColor() {
-    Random random = new Random();
-    int limit = 256;
-    return new Color(random.nextInt(limit), random.nextInt(limit), random.nextInt(limit));
   }
 
   // Don't touch the code below
