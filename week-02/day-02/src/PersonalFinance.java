@@ -15,20 +15,20 @@ public class PersonalFinance {
     }
     System.out.println(sum);
     int max = -1;
-    for (int i: expenses) {
-      if (i>max) {
+    for (int i : expenses) {
+      if (i > max) {
         max = i;
       }
     }
     System.out.println(max);
     int min = max;
-    for (int i: expenses) {
-      if (i<min) {
+    for (int i : expenses) {
+      if (i < min) {
         min = i;
       }
     }
     System.out.println(min);
-    double avg = (sum/expenses.size());
+    double avg = (sum / expenses.size());
     System.out.println(avg);
   }
 }

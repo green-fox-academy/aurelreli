@@ -8,9 +8,10 @@ public class Factorio {
     int number = 5;
     System.out.println(factorio(number));
   }
+
   public static int factorio(int in) {
     int factorial = 1;
-    for (int i = 1;i <= in; i++ ) {
+    for (int i = 1; i <= in; i++) {
       factorial = factorial * i;
     }
     return factorial;
