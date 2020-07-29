@@ -12,5 +12,6 @@ public class DefineBasicInfo {
         System.out.println("életkor: " + age);
         System.out.println("magasság: " + height);
         System.out.println("házas: " + married);
+
     }
 }
