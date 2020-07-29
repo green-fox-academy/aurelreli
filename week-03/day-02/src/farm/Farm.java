@@ -24,7 +24,7 @@ public class Farm {
   public void slaughter() {
     int food = 0;
     for (int i = 0; i < farm.size()-getFreePlace(); i++) {
-      if (farm.get(i).getHunger() > food) {
+      if (farm.get(i).getHunger() > farm.get(i).getHunger()) {
         food = i;
       }
     }
