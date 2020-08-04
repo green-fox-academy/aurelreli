@@ -35,7 +35,16 @@ public class Main {
     System.out.println("ship2: ");
     flyingDutchman.fillship(allPirates);
     flyingDutchman.showMembers();
-    System.out.println(blackPearl.battle(flyingDutchman));
+    try {
+      System.out.println(blackPearl.battle(flyingDutchman));
+      System.out.println("survivors of the black pearl: ");
+      blackPearl.showMembers();
+      System.out.println("survivors of the flying dutchman: ");
+      flyingDutchman.showMembers();
+
+    } catch (Exception e) {
+      System.out.println("Can't battle");
+    }
 
 //test----------------------------------------------------------------------------------------------
 

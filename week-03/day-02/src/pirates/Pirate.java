@@ -44,6 +44,7 @@ public class Pirate {
   public void brawl(Pirate pirate) {
     int random = (int)(Math.random() * 3) + 1;
     if (pirate.isAlive && this.isAlive) {
+
       switch (random) {
         case 1 :
           pirate.die();

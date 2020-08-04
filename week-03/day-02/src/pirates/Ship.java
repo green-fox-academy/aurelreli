@@ -5,8 +5,6 @@ import java.util.ArrayList;
 public class Ship {
   private String shipName;
   ArrayList<Pirate> ship = new ArrayList<>();
-  ArrayList<Pirate> allPirates = new ArrayList<>();
-
 
   public Ship(String shipName) {
     this.shipName = shipName;
@@ -75,16 +73,17 @@ public class Ship {
       }
     }
     win = (ship1 > ship2);
-    return win;
-//consequences
-//    if (ship1 > ship2) {
-//      for (int i = 0; i < this.ship.size(); i++) {
-//
-//      }
-//    } else {
-//
-//    }
-
+//losses
+    if (win) {
+      for (int i = 0; i < (int) (Math.random() * ship.getSize()) + 1; i++) {
+        ship.getIndex(i).die();
+      }
+    } else {
+      for (int i = 0; i < (int) (Math.random() * this.ship.size()) + 1; i++) {
+        this.ship.get(i).die();
+      }
+    }
+  return win;
   }
   public Pirate getIndex(int i) {
     return ship.get(i);
