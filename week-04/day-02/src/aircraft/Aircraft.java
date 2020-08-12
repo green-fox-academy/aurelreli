@@ -5,8 +5,9 @@ public class Aircraft {
   private int damage;
   private int maxAmmo;
 
-  public Aircraft() {
-    ammo = 0;
+  public Aircraft(int damage, int maxAmmo) {
+    this.damage = damage;
+    this.maxAmmo = maxAmmo;
   }
 
   public int fight() {

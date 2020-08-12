@@ -13,13 +13,15 @@ public class Carrier {
     ammoStored = initAmmo;
     aircrafts = new ArrayList<>();
   }
+
   public void add(Aircraft aircraft) {
     aircrafts.add(aircraft);
   }
+
   public void fill() {
     int ammoNeeded = 0;
     for (Aircraft aircraft : aircrafts) {
-      ammoNeeded = ammoNeeded + (aircraft.getMaxAmmo()-aircraft.getAmmo());
+      ammoNeeded = ammoNeeded + (aircraft.getMaxAmmo() - aircraft.getAmmo());
     }
     try {
       if (ammoNeeded > ammoStored) {
@@ -40,11 +42,13 @@ public class Carrier {
       System.out.println("No ammo on the carrier!");
     }
   }
+
   public void fight(Carrier carrier) {
     for (Aircraft aircraft : aircrafts) {
       carrier.setHp(-1 * (aircraft.fight()));
     }
   }
+
   public void setHp(int hp) {
     this.hp = this.hp + hp;
   }
