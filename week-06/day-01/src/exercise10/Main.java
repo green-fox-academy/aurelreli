@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import javax.crypto.spec.PSource;
 
 public class Main {
   public static void main(String[] args) {
@@ -22,7 +21,6 @@ public class Main {
 
     Map<Object, List<Fox>> colorList = foxList.stream()
       .collect(Collectors.groupingBy(c -> c.color.equals("green")))
-      .forEach(color, p);
     ;
   }
 
