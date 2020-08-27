@@ -8,17 +8,23 @@
 <body>
     <a href="" class="header">My Shop</a>
     <hr>
-    <a href="" class="filter">ONLY AVAILABLE</a>
+    <a href="/only-available" class="filter">ONLY AVAILABLE</a>
     <a href="" class="filter">CHEAPEST FIRST</a>
     <a href="" class="filter">CONTAINS NIKE</a>
     <a href="" class="filter">AVERAGE STOCK</a>
     <a href="" class="filter">MOST EXPENSIVE AVAILABLE</a>
     <table>
+        <tr >
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity of stock</th>
+        </tr>
         <tr th:each="item : ${items}">
-            <td th:text="${item.getName()}"></td>
-            <td th:text="${item.getDescription()}"></td>
-            <td th:text="${item.getPrice()}"></td>
-            <td th:text="${item.getQuantityOfStock()}"></td>
+            <td th:text="${item.getName()}" class="text"></td>
+            <td th:text="${item.getDescription()}" class="text"></td>
+            <td th:text="${item.getPrice()} + ' Kč'" class="number"></td>
+            <td th:text="${item.getQuantityOfStock()}" class="number"></td>
         </tr>
     </table>
 </body>
