@@ -1,0 +1,21 @@
+.header {
+    color: steelblue;
+    font-size: 40px;
+    text-decoration: none;
+}
+hr {
+    color: steelblue;
+    margin-bottom: 10px;
+}
+.filter {
+    background-color: red;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+body {
+    font-family: sans-serif;
+    margin-right: 10%;
+    margin-left: 10%;
+}

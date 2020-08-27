@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="" class="header">My Shop</a>
+    <hr>
+    <a href="" class="filter">ONLY AVAILABLE</a>
+    <a href="" class="filter">CHEAPEST FIRST</a>
+    <a href="" class="filter">CONTAINS NIKE</a>
+    <a href="" class="filter">AVERAGE STOCK</a>
+    <a href="" class="filter">MOST EXPENSIVE AVAILABLE</a>
+    <table>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getDescription()}"></td>
+            <td th:text="${item.getPrice()}"></td>
+            <td th:text="${item.getQuantityOfStock()}"></td>
+        </tr>
+    </table>
+</body>
+</html>
