@@ -1,10 +1,12 @@
 .header {
-    color: steelblue;
+    color: deepskyblue;
     font-size: 40px;
     text-decoration: none;
+    font-weight: bold;
+
 }
 hr {
-    color: steelblue;
+    color: deepskyblue;
     margin-bottom: 30px;
 }
 .filter {
@@ -13,19 +15,46 @@ hr {
     color: white;
     text-decoration: none;
     border-radius: 10px;
+    align-items: stretch;
 }
 body {
     font-family: sans-serif;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 20%;
+    margin-left: 20%;
 }
 table {
     margin-top: 30px;
-    padding: 30px;
+    width: 100%;
+
 }
 .number {
     text-align: center;
 }
 th {
-    background-color: steelblue;
+    background-color: deepskyblue;
+    padding: 30px;
+}
+td {
+    padding: 30px;
+}
+p1 {
+    font-size: 20px;
+    color: indianred;
+}
+input {
+    width: 79.5%;
+    padding: 23px;
+    border: red solid 3px;
+    border-radius: 10px;
+    font-size: 30px
+}
+button {
+    padding: 15px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    font-size: 30px;
+}
+header {
+
 }

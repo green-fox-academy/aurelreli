@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="/" class="header">My Shop</a>
+    <hr>
+    <a href="/only-available" class="filter">ONLY AVAILABLE</a>
+    <a href="/cheapest-first" class="filter">CHEAPEST FIRST</a>
+    <a href="/contains-nike" class="filter">CONTAINS NIKE</a>
+    <a href="/average-stock" class="filter">AVERAGE STOCK</a>
+    <a href="/most-expensive-available" class="filter">MOST EXPENSIVE AVAILABLE</a>
+    <h1 th:text="'Most expensive item available: ' + ${mostExpensiveAvailable}"></h1>
+</body>
+</html>
