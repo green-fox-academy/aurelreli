@@ -9,6 +9,17 @@
 
     <h1>Trending posts</h1>
     <table>
+        <tr th:each="post : ${trendingposts}">
+            <td th:text="${post.getPoint()}"></td>
+            <td><a th:href="|/plus/${post.getId()}|">+</a></td>
+            <td><a th:href="|/minus/${post.getId()}|">-</a></td>
+            <td><a th:text="${post.getTitle()}"  th:href="${post.getUrl()}"></a></td>
+            <td th:text="${post.getDate()}"></td>
+        </tr>
+    </table>
+
+    <h1>All posts</h1>
+    <table>
         <tr th:each="post : ${posts}">
             <td th:text="${post.getPoint()}"></td>
             <td><a th:href="|/plus/${post.getId()}|">+</a></td>

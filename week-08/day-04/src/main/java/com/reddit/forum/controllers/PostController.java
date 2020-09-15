@@ -21,6 +21,7 @@ public class PostController {
   @GetMapping("/")
   public String listPosts(Model model) {
     model.addAttribute("posts", postService.getPosts());
+    model.addAttribute("trendingposts", postService.getTrendingPosts());
     return "index";
   }
 

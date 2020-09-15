@@ -2,8 +2,10 @@ package com.reddit.forum.services;
 
 import com.reddit.forum.models.Post;
 import com.reddit.forum.repositories.PostRepository;
+import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +36,12 @@ public class PostService {
     Post post = postRepository.findById(id).orElseThrow(NoSuchElementException::new);
     post.decrementPoint();
     postRepository.save(post);
+  }
+
+  public List<Post> getTrendingPosts() {
+    return postRepository.findAll().stream()
+        .sorted(Comparator.comparing(Post::getPoint).reversed())
+        .limit(10)
+        .collect(Collectors.toList());
   }
 }
