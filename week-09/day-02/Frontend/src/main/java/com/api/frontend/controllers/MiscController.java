@@ -2,11 +2,14 @@ package com.api.frontend.controllers;
 
 import com.api.frontend.models.Append;
 import com.api.frontend.models.ArraysInput;
+import com.api.frontend.models.DoubleArray;
 import com.api.frontend.models.Doubled;
 import com.api.frontend.models.ErrorMessage;
 import com.api.frontend.models.Factor;
+import com.api.frontend.models.MultiplyArray;
 import com.api.frontend.models.NumberUntil;
 import com.api.frontend.models.Sum;
+import com.api.frontend.models.SumArray;
 import com.api.frontend.models.WelcomeMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -68,11 +71,11 @@ public class MiscController {
     }
     switch (input.getWhat()) {
       case "sum" :
-        return ResponseEntity.ok(input.sumNumbers());
+        return ResponseEntity.ok(new SumArray(input.getNumbers()));
       case "multiply" :
-        return ResponseEntity.ok(input.multiplyNumbers());
+        return ResponseEntity.ok(new MultiplyArray(input.getNumbers()));
       case "double" :
-        return ResponseEntity.ok(input.doubleNumbers());
+        return ResponseEntity.ok(new DoubleArray(input.getNumbers()));
     }
     return ResponseEntity.ok(new ErrorMessage("Something is wrong."));
   }
