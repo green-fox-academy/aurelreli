@@ -26,7 +26,7 @@ public class TodoController {
   }
 
   @GetMapping({"/", "/list"})
-  public String list(Model model) {
+  public String listTodos(Model model) {
     model.addAttribute("todos", todoService.getTodos());
     return "todolist";
   }

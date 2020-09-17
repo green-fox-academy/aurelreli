@@ -22,8 +22,6 @@ public class Todo {
 
   public Todo(String title) {
     this.title = title;
-    urgent = false;
-    done = false;
   }
 
   public long getId() {

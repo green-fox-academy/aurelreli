@@ -4,7 +4,6 @@ import com.connection.app.models.Todo;
 import com.connection.app.repositories.TodoRepository;
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
