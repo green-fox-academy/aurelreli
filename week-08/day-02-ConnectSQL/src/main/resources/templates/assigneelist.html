@@ -5,8 +5,22 @@
     <title>Assignee List</title>
 </head>
 <body>
+    <h1>Add Assignee</h1>
+    <form action="/assigneelist" method="post">
+        <div>
+            <input th:type="text" name="name" placeholder="Name">
+            <input th:type="text" name="email" placeholder="E-mail">
+            <button>Add</button>
+        </div>
+    </form>
     <h1>Assignees:</h1>
-    <ul th:each="assignee : ${assignees}"></ul>
-        <li th:text="'name: ' + ${assignee.getName} + ' e-mail: ' + ${assignee.getEmail}"></li>
+    <table>
+        <tr th:each="assignee : ${assignees}">
+            <td th:text="${assignee.getName()}"></td>
+            <td th:text="${assignee.getEmail()}"></td>
+            <td><a th:href="|/remove/${assignee.getId()}|">remove</a></td>
+<!--            <td th:type="button" name="modify">modify</td>-->
+        </tr>
+    </table>
 </body>
 </html>

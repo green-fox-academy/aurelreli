@@ -1,16 +1,18 @@
 package com.api.frontend.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class Log {
   private List<MyEntry> entries;
-  private int entry_count;
+  @JsonProperty("entry_count")
+  private int entryCount;
 
   public Log() {}
 
   public Log(List<MyEntry> entries) {
     this.entries = entries;
-    entry_count = entries.size();
+    entryCount = entries.size();
   }
 
   public List<MyEntry> getEntries() {
@@ -21,11 +23,11 @@ public class Log {
     this.entries = entries;
   }
 
-  public int getEntry_count() {
-    return entry_count;
+  public int getEntryCount() {
+    return entryCount;
   }
 
-  public void setEntry_count(int entry_count) {
-    this.entry_count = entry_count;
+  public void setEntryCount(int entryCount) {
+    this.entryCount = entryCount;
   }
 }

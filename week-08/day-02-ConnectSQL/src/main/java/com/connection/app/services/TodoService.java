@@ -4,12 +4,14 @@ import com.connection.app.models.Todo;
 import com.connection.app.repositories.TodoRepository;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TodoService {
   private TodoRepository todoRepository;
 
+  @Autowired
   public TodoService(TodoRepository todoRepository) {
     this.todoRepository = todoRepository;
   }

@@ -3,6 +3,7 @@ package com.rest.test.controllers;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -19,6 +20,8 @@ public class GuardianControllerTest {
   @Autowired
   private MockMvc mockMvc;
 
+
+  //GROOT
   @Test
   public void givenMessage_statusIsOk() throws Exception {
     mockMvc.perform(get("/groot?message=something")).andExpect(status().isOk());
@@ -42,6 +45,8 @@ public class GuardianControllerTest {
         .andExpect(jsonPath("$.error", is("I am Groot!")));
   }
 
+
+  //YONDU
   @Test
   public void givenParameters_statusIsOk() throws Exception {
     mockMvc.perform(get("/yondu?distance=100.00&time=10.00")).andExpect(status().isOk());
@@ -66,10 +71,31 @@ public class GuardianControllerTest {
         .andExpect(jsonPath("$.error", is("Parameters not provided.")));
   }
 
+
+  //DRAX
   @Test
   public void givenCalorieTable_isNotEmpty() throws Exception {
     mockMvc.perform(get("/drax")).andExpect(status().isOk())
         .andExpect(jsonPath("$.foods").isArray())
         .andExpect(jsonPath("$.foods", hasSize(4)));
   }
+
+  @Test
+  public void givenCalorieTable_whenAddFood_thenFoodIsAddedToCalorieTable() throws Exception {
+    mockMvc.perform(post("/drax/add?name=falafel&amount=2&calorie=100")).andExpect(status().isOk())
+        .andExpect(jsonPath("$.foods", hasSize(5)));
+  }
+
+  @Test
+  public void givenCalorieTable_whenRemoveFood_ThenFoodIsRemovedFromCalorieTable() throws Exception {
+    mockMvc.perform(post("/drax/remove?name=quesadilla")).andExpect(status().isOk())
+        .andExpect(jsonPath("$.foods", hasSize(3)));
+  }
+
+  @Test
+  public void givenCalorieTable_whenModifyAmount_amountIsAsExpected() throws Exception {
+    mockMvc.perform(post("/drax/modify?name=pizza&amount=2")).andExpect(status().isOk())
+        .andExpect(jsonPath("$.foods[0].amount", is(2)));
+  }
+
 }

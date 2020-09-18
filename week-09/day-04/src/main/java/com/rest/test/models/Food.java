@@ -1,9 +1,16 @@
 package com.rest.test.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Food {
+  @Id
   private String name;
   private int amount;
   private int calorie;
+
+  public Food() {}
 
   public Food(String name, int amount, int calorie) {
     this.name = name;

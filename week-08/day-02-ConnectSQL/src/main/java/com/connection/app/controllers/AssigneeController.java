@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AssigneeController {
@@ -15,12 +17,24 @@ public class AssigneeController {
   @Autowired
   public AssigneeController(AssigneeService assigneeService) {
     this.assigneeService = assigneeService;
-    assigneeService.add(new Assignee("joe", "jonagy@gmail.com"));
   }
 
   @GetMapping("/assigneelist")
   public String listAssignees(Model model) {
     model.addAttribute("assignees", assigneeService.getAssignees());
     return "assigneelist";
+  }
+
+  @PostMapping("/assigneelist")
+  public String addAssignee(Model model, String name, String email) {
+    assigneeService.add(name, email);
+    model.addAttribute("assignees", assigneeService.getAssignees());
+    return "redirect:/assigneelist";
+  }
+
+  @GetMapping("/remove/{id}")
+  public String removeAssignee(Model model,@PathVariable int id) {
+    assigneeService.remove(id);
+    return "redirect:/assigneelist";
   }
 }

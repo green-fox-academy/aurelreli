@@ -19,7 +19,18 @@ public class AssigneeService {
     return assigneeRepository.findAll();
   }
 
-  public void add(Assignee assignee) {
-    assigneeRepository.save(assignee);
+  public Assignee findById(int id) {
+    return getAssignees().stream()
+        .filter(x -> x.getId() == id)
+        .findFirst()
+        .orElse(null);
+  }
+
+  public void add(String name, String email) {
+    assigneeRepository.save(new Assignee(name, email));
+  }
+
+  public void remove(int id) {
+    assigneeRepository.delete(findById(id));
   }
 }

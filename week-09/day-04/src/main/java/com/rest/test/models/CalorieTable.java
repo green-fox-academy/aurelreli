@@ -18,4 +18,20 @@ public class CalorieTable {
   public List<Food> getFoods() {
     return foods;
   }
+
+  public Food findFoodByName(String name) {
+    return foods.stream().filter(x -> x.getName().equals(name)).findFirst().orElse(null);
+  }
+
+  public void addFood(String name, int amount, int calorie) {
+    foods.add(new Food(name, amount, calorie));
+  }
+
+  public void removeFood(String name) {
+    foods.remove(findFoodByName(name));
+  }
+
+  public void modifyAmount(String name, int amount) {
+    findFoodByName(name).setAmount(amount);
+  }
 }
